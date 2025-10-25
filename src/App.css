@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-blue: #103975;
+  --color-mid-blue: #1C3E75;
+  --color-light-blue: #2F6EB5;
+  --color-gold: #F2B633;
+  --color-cream-bg: #FBEEDA;
+  --color-review-bg: #1F4681;
+  --font-museo: 'MuseoModerno', sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-museo);
+}
