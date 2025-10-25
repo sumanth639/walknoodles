@@ -21,3 +21,13 @@ body {
     color: white; /* Fallback text color */
     -webkit-text-stroke: 1px black; /* Border thickness & color */
 }
+
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
