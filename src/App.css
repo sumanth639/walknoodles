@@ -16,3 +16,8 @@ body {
   box-sizing: border-box;
   font-family: var(--font-museo);
 }
+
+.text-stroke {
+    color: white; /* Fallback text color */
+    -webkit-text-stroke: 1px black; /* Border thickness & color */
+}
