@@ -42,23 +42,25 @@ const MustTrySection = () => {
                     return (
                         <SwiperSlide key={item.id} className="flex justify-center overflow-visible">
                             <div className="relative w-full max-w-[300px] mx-2">
-    <div className="relative bg-white rounded-t-3xl z-10 h-64 overflow-hidden">
-        <img src={item.image} alt={item.name} className="w-full h-full object-cover rounded-t-2xl" />
-    </div>
+                                <div className="relative  rounded-t-3xl z-10 h-64 overflow-hidden flex items-center justify-center">
+                                    <img src={item.image} alt={item.name} className="w-56 h-64 object-cover rounded-full" />
+                                </div>
 
-    {isActive && (
-        <motion.div
-            layout
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -20, opacity: 0 }}
-            transition={{ type: 'spring', stiffness: 250, damping: 20 }}
-            className="relative -mt-8  left-1/2 -translate-x-1/2 w-full  h-24 bg-gold rounded-b-3xl -z-10 flex items-center justify-center shadow-lg"
-        >
-            <h3 className="text-light-blue text-center font-semibold text-lg">{item.name}</h3>
-        </motion.div>
-    )}
-</div>
+                                {isActive && (
+                                    <motion.div
+                                        layout
+                                        initial={{ y: -20, opacity: 0 }}
+                                        animate={{ y: 0, opacity: 1 }}
+                                        exit={{ y: -20, opacity: 0 }}
+                                        transition={{ type: 'spring', stiffness: 250, damping: 20 }}
+                                        className="relative -mt-20 left-1/2 -translate-x-1/2 w-full h-40 bg-gold -z-10 flex flex-col justify-end items-center shadow-lg rounded-b-3xl pb-5"
+                                    >
+                                        <h3 className="text-light-blue  text-center font-semibold text-lg mb-2">
+                                            {item.name}
+                                        </h3>
+                                    </motion.div>
+                                )}
+                            </div>
 
                         </SwiperSlide>
                     );
