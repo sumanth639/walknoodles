@@ -41,7 +41,7 @@ const QualitySection = () => {
                 {qualities.map((quality, index) => (
                     <motion.div
                         key={quality.id}
-                        className={`relative flex flex-col justify-center min-h-[250px]
+                        className={`relative flex flex-col justify-center min-h-[280px]
                                     bg-cover bg-center w-full overflow-hidden shadow-lg group`}
                         style={{ backgroundImage: `url(${quality.bgImage})` }}
                         initial="hidden"
