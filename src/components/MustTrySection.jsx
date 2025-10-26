@@ -16,11 +16,27 @@ const items = [
 const MustTrySection = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
+    // Variants for slide animations
+    const slideVariant = {
+        hidden: { opacity: 0, y: 20, scale: 0.9 },
+        visible: { opacity: 1, y: 0, scale: 1 },
+    };
+
+    const contentVariant = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 },
+    };
+
     return (
         <section className="overflow-hidden bg-[#fbeeda]">
-            <h2 className="text-3xl font-bold text-center text-light-blue mb-8 pt-4">
+            <motion.h2
+                className="text-3xl font-bold text-center text-light-blue mb-8 pt-4"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+            >
                 Must Try..
-            </h2>
+            </motion.h2>
 
             <Swiper
                 modules={[Autoplay]}
@@ -41,27 +57,41 @@ const MustTrySection = () => {
                     const isActive = index === activeIndex;
                     return (
                         <SwiperSlide key={item.id} className="flex justify-center overflow-visible">
-                            <div className="relative w-full max-w-[300px] mx-2">
-                                <div className="relative  rounded-t-3xl z-10 h-64 overflow-hidden flex items-center justify-center">
-                                    <img src={item.image} alt={item.name} className="w-56 h-64 object-cover rounded-full" />
-                                </div>
+                            <motion.div
+                                className="relative w-full max-w-[300px] mx-2"
+                                variants={slideVariant}
+                                initial="hidden"
+                                animate="visible"
+                                transition={{ duration: 0.8, delay: index * 0.2 }}
+                            >
+                                <motion.div
+                                    className="relative rounded-t-3xl z-10 h-64 overflow-hidden flex items-center justify-center cursor-pointer"
+                                    whileHover={{ scale: 1.05 }}
+                                    transition={{ type: 'spring', stiffness: 300 }}
+                                >
+                                    <img
+                                        src={item.image}
+                                        alt={item.name}
+                                        className="w-56 h-64 object-cover rounded-full"
+                                    />
+                                </motion.div>
 
                                 {isActive && (
                                     <motion.div
                                         layout
-                                        initial={{ y: -20, opacity: 0 }}
-                                        animate={{ y: 0, opacity: 1 }}
-                                        exit={{ y: -20, opacity: 0 }}
+                                        initial="hidden"
+                                        animate="visible"
+                                        exit="hidden"
+                                        variants={contentVariant}
                                         transition={{ type: 'spring', stiffness: 250, damping: 20 }}
                                         className="relative -mt-20 left-1/2 -translate-x-1/2 w-full h-40 bg-gold -z-10 flex flex-col justify-end items-center shadow-lg rounded-b-3xl pb-5"
                                     >
-                                        <h3 className="text-light-blue  text-center font-semibold text-lg mb-2">
+                                        <h3 className="text-light-blue text-center font-semibold text-lg mb-2">
                                             {item.name}
                                         </h3>
                                     </motion.div>
                                 )}
-                            </div>
-
+                            </motion.div>
                         </SwiperSlide>
                     );
                 })}
