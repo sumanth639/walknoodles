@@ -41,11 +41,11 @@ const MenuItemAccordion = ({ item, openItemId, toggleItem, getPriceString }) => 
                         {/* Left Side: Name and Tag */}
                         <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-3 space-y-1 sm:space-y-0 max-w-[70%]">
                             <span className="text-lg text-dark-blue whitespace-normal text-left">{item.name}</span>
-                            <div className="flex-shrink-0">{getTypeTag(item)}</div> 
+                            <div className="shrink-0">{getTypeTag(item)}</div> 
                         </div>
                         
                         {/* Right Side: Price and Arrow */}
-                        <div className="flex items-center space-x-3 flex-shrink-0">
+                        <div className="flex items-center space-x-3 shrink-0">
                             <span className="text-base text-gray-700 whitespace-nowrap">₹{getPriceString(item)}</span>
                             <motion.div
                                 animate={{ rotate: 0 }}

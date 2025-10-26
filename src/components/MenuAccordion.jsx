@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FULL_MENU_DATA, CUSTOM_CHOICES, COMBO_ITEM } from './MenuData';
-import MenuFilters from './MenuFilters';
+import { FULL_MENU_DATA, CUSTOM_CHOICES, COMBO_ITEM } from '../assets/MenuData';
+import MenuFilters from './MenuFilters'
 import MenuItemAccordion from './MenuItemAccordion';
 
 // Helper function to get the first item ID from a category

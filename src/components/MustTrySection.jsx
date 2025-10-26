@@ -53,7 +53,7 @@ const MustTrySection = () => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -20, opacity: 0 }}
             transition={{ type: 'spring', stiffness: 250, damping: 20 }}
-            className="relative -mt-8  left-1/2 -translate-x-1/2 w-[100%]  h-24 bg-gold rounded-b-3xl -z-10 flex items-center justify-center shadow-lg"
+            className="relative -mt-8  left-1/2 -translate-x-1/2 w-full  h-24 bg-gold rounded-b-3xl -z-10 flex items-center justify-center shadow-lg"
         >
             <h3 className="text-light-blue text-center font-semibold text-lg">{item.name}</h3>
         </motion.div>

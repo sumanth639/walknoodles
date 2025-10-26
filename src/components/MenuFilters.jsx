@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CATEGORY_MAP } from './MenuData';
+import { CATEGORY_MAP } from '../assets/MenuData';
 
 const MenuFilters = ({ activeCategory, setActiveCategory, activeType, setActiveType }) => {
     const isFoodCategory = ['all', 'noodles', 'ramen', 'broths', 'small_plates'].includes(activeCategory);
