@@ -5,6 +5,7 @@ import Contact from './pages/Contact'
 import Home from "./pages/Home"
 import './index.css'
 import "./App.css"
+import Footer from './components/Footer'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/menu" element={<Menu />} />
         </Routes>
+        <Footer/>
       </div>
     </>
   )

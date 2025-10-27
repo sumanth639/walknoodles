@@ -40,3 +40,7 @@ body {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
+
+.footer-divider {
+  background-color: rgba(156, 163, 175, 0.25); /* tailwind gray-400/40 */
+}

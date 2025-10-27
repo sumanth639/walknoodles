@@ -57,10 +57,10 @@ const ReviewsSection = () => {
           {reviewsData.map((review) => (
             <SwiperSlide
               key={review.id}
-              className="!flex justify-center items-stretch py-4"
+              className="!flex justify-center  items-stretch py-4"
             >
               <div
-                className="bg-light-blue flex flex-col p-6  transition-all duration-300 hover:scale-[1.03] z-10 w-64 h-96 rounded-t-[10rem]"
+                className="bg-light-blue flex flex-col p-6 border-2 border-black  transition-all duration-300 hover:scale-[1.03] z-10 w-64 h-96 rounded-t-[10rem]"
               >
                 <p className="text-gold text-sm leading-snug mt-20 overflow-hidden text-ellipsis">
                   “{review.text}”
