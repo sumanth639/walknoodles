@@ -8,7 +8,7 @@ const Footer = () => {
         {/* Two columns always */}
         <div
           className="relative grid grid-cols-2 gap-4 items-start w-full
-                     min-h-[120px] md:min-h-[140px] lg:min-h-[160px]">
+                     min-h-[120px] md:min-h-[140px] lg:min-h-40">
           {/* Column 1 */}
           <div
             className="flex flex-col justify-center items-center sm:items-start text-center sm:text-left px-2"
@@ -28,7 +28,7 @@ const Footer = () => {
               className="flex items-center justify-center sm:justify-start gap-3 hover:text-gold transition-colors duration-200"
             >
               <FaInstagram
-                className="flex-shrink-0 text-gold"
+                className="shrink-0 text-gold"
                 style={{ width: "clamp(16px, 2.6vw, 20px)", height: "auto" }}
                 aria-hidden
               />
@@ -42,7 +42,7 @@ const Footer = () => {
               className="flex items-center justify-center sm:justify-start gap-3 hover:text-gold transition-colors duration-200"
             >
               <FaEnvelope
-                className="flex-shrink-0 text-gold" 
+                className="shrink-0 text-gold" 
                 style={{ width: "clamp(16px, 2.6vw, 20px)", height: "auto" }}
                 aria-hidden
               />
@@ -69,7 +69,7 @@ const Footer = () => {
 
             <div className="flex items-start justify-center sm:justify-start gap-3">
               <FaMapMarkerAlt
-                className="flex-shrink-0 mt-1 text-gold"
+                className="shrink-0 mt-1 text-gold"
                 style={{ width: "clamp(16px, 2.6vw, 20px)", height: "auto" }}
                 aria-hidden
               />

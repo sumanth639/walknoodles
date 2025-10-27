@@ -24,7 +24,7 @@ const ContactHero = () => {
       </div>
 
       {/* Icons Section */}
-      <div className='flex absolute top-60 right-[40px] space-x-4'>
+      <div className='flex absolute top-60 right-10 space-x-4'>
         <div className="h-16 w-16 flex items-center justify-center bg-white/80 rounded-full  hover:bg-white transition duration-200 cursor-pointer">
           <Instagram className="h-10 w-10 text-pink-500" />
         </div>
