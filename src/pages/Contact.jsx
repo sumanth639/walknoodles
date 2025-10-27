@@ -7,7 +7,7 @@ function Contact() {
   return (
     <main>
        <ContactHero/>
-       <ContactInfoCard/>
+       <ContactInfoCard />
        <EventHostSection/>
        <FindUsSection/>
     </main>

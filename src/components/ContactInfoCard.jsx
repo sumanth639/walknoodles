@@ -2,12 +2,12 @@ import { MapPin, Mail, Phone } from 'lucide-react';
 
 export default function ContactInfoCard() {
   return (
-    <div className="max-w-md mx-auto p-6">
-      <div className="bg-white border-2 border-dark-blue rounded-3xl p-6 space-y-8">
+    <div className="max-w-md mx-auto  p-6  ">
+      <div className=" border-2 border-dark-blue rounded-3xl p-6 space-y-8">
         
         {/* Address Section */}
         <div className="flex items-start gap-4">
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <MapPin className="w-10 h-10 text-dark-blue" strokeWidth={2}  />
           </div>
           <div>
@@ -19,7 +19,7 @@ export default function ContactInfoCard() {
 
         {/* Email Section */}
         <div className="flex items-start gap-4">
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <Mail className="w-10 h-10 text-dark-blue" strokeWidth={2} />
           </div>
           <div>
@@ -31,7 +31,7 @@ export default function ContactInfoCard() {
 
         {/* Phone Section */}
         <div className="flex items-start gap-4">
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <Phone className="w-10 h-10 text-dark-blue" strokeWidth={2} />
           </div>
           <div>
