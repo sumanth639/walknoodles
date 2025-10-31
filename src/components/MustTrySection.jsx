@@ -6,11 +6,11 @@ import 'swiper/css/autoplay';
 import { motion } from 'framer-motion';
 
 const items = [
-    { id: 1, image: '/gallery/img-1.jpg', name: 'Butter Chicken Noodles' },
-    { id: 2, image: '/gallery/img-2.jpg', name: 'Pad Thai' },
-    { id: 3, image: '/gallery/img-3.jpg', name: 'Chilli Crisp Noodles' },
-    { id: 4, image: '/gallery/img-6.jpg', name: 'Street Style Chowmein' },
-    { id: 5, image: '/gallery/img-5.jpg', name: 'Jajangmyeon' },
+    { id: 1, image: '/gallery/img-1.jpg', name: 'Miso Ramen' },
+    { id: 2, image: '/gallery/img-2.jpg', name: 'Jhapchang ' },
+    { id: 3, image: '/gallery/img-3.jpg', name: 'Steamed Dumplings' },
+    { id: 4, image: '/gallery/img-6.jpg', name: 'Kung Pao Dumplings' },
+    { id: 5, image: '/gallery/img-5.jpg', name: 'Japchae' },
 ];
 
 const MustTrySection = () => {
