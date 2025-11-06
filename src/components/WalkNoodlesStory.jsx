@@ -1,4 +1,3 @@
-import React from 'react';
 import StoryTitle from './StoryTitle';
 
 const FullWidthFolderShape = () => {
@@ -6,7 +5,7 @@ const FullWidthFolderShape = () => {
     <div className="w-full relative z-10">
       <div
         className="relative w-full min-h-[200px] bg-dark-blue 
-        rounded-bl-xl rounded-br-xl rounded-tl-xl 
+         rounded-tl-xl 
         flex flex-row gap-4 
         p-8 pr-2 pb-16"
         style={{
