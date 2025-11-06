@@ -2,7 +2,7 @@ import React from "react";
 
 const OurVisionSection = () => {
   return (
-    <section className="relative flex w-full min-h-[70vh] items-center justify-between bg-light-blue overflow-hidden py-8">
+    <section className="relative flex w-full min-h-[55vh] items-center justify-between bg-light-blue overflow-hidden ">
       {/* Circle wrapper (no absolute overlap) */}
       <div className="relative flex w-[55%] justify-end">
         <div className="relative bg-gold border-2 border-black rounded-full aspect-square w-[420px] sm:w-[520px] flex items-center justify-end overflow-hidden -ml-[25%]">

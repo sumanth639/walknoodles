@@ -2,7 +2,6 @@ import React from 'react';
 import { ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Helper function to get the tag (V/NV badge)
 const getTypeTag = (item) => {
     let colorClass;
     let text;
@@ -28,7 +27,6 @@ const MenuItemAccordion = ({ item, openItemId, toggleItem, getPriceString }) => 
                     : "bg-[#FFF3DB] border border-white hover:shadow-lg"
             }`}
         >
-            {/* Accordion Header */}
             <button
                 className={`w-full text-left transition-colors ${
                     isOpen ? "p-0" : "p-4"
@@ -38,15 +36,13 @@ const MenuItemAccordion = ({ item, openItemId, toggleItem, getPriceString }) => 
                 {!isOpen && (
                     <div className="flex justify-between items-center font-bold">
                         
-                        {/* Left Side: Name and Tag */}
                         <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-3 space-y-1 sm:space-y-0 max-w-[70%]">
                             <span className="text-lg text-dark-blue whitespace-normal text-left">{item.name}</span>
                             <div className="shrink-0">{getTypeTag(item)}</div> 
                         </div>
                         
-                        {/* Right Side: Price and Arrow */}
                         <div className="flex items-center space-x-3 shrink-0">
-                            <span className="text-base text-gray-700 whitespace-nowrap">₹{getPriceString(item)}</span>
+                            {/* Price element removed from closed state */}
                             <motion.div
                                 animate={{ rotate: 0 }}
                                 transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -59,7 +55,6 @@ const MenuItemAccordion = ({ item, openItemId, toggleItem, getPriceString }) => 
                 )}
             </button>
 
-            {/* Accordion Content */}
             <AnimatePresence initial={false}>
                 {isOpen && (
                     <motion.div
@@ -70,7 +65,6 @@ const MenuItemAccordion = ({ item, openItemId, toggleItem, getPriceString }) => 
                         className="overflow-hidden"
                     >
                         <div className="flex items-stretch h-full">
-                            {/* Image Section (Placeholder) */}
                             <div className="w-2/5 relative overflow-hidden bg-gray-200 flex items-center justify-center text-gray-500 text-xs">
                                 <img
                                     src={item.image}
@@ -79,15 +73,12 @@ const MenuItemAccordion = ({ item, openItemId, toggleItem, getPriceString }) => 
                                 />
                             </div>
 
-                            {/* Text Section */}
                             <div className="flex-1 p-5 flex flex-col justify-center">
                                 <div className="flex justify-between items-center mb-1">
                                     <h4 className="text-xl font-extrabold text-light-blue">
                                         {item.name}
                                     </h4>
-                                    <div className="text-dark-blue text-xl font-bold">
-                                        ₹{getPriceString(item)}
-                                    </div>
+                                    {/* Price element removed from open state */}
                                 </div>
                                 
                                 <p className="text-sm leading-relaxed text-dark-blue m-0 mb-3 border-b pb-2 border-gray-300">

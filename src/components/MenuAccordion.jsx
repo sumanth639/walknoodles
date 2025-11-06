@@ -4,7 +4,6 @@ import { FULL_MENU_DATA, CUSTOM_CHOICES, COMBO_ITEM } from '../assets/MenuData';
 import MenuFilters from './MenuFilters'
 import MenuItemAccordion from './MenuItemAccordion';
 
-// Helper function to get the first item ID from a category
 const getFirstItemId = (category) => {
     if (category === 'all') {
         return FULL_MENU_DATA.noodles.items[0]?.id || null;
@@ -17,21 +16,16 @@ const MenuAccordion = () => {
     const [openItemId, setOpenItemId] = useState(getFirstItemId('all'));
     const [activeType, setActiveType] = useState('all');
 
-    // Effect to automatically open the first item of a newly selected category
     useEffect(() => {
         const firstId = getFirstItemId(activeCategory);
         setOpenItemId(firstId);
     }, [activeCategory]);
 
-
-    // Toggle function handles closing if the same item is clicked
     const toggleItem = (id) => setOpenItemId(openItemId === id ? null : id);
 
-    // Memoized filter logic
     const filteredMenu = useMemo(() => {
         let itemsToFilter = [];
 
-        // Combine main dish categories for 'all'
         if (activeCategory === 'all') {
             itemsToFilter = [
                 ...FULL_MENU_DATA.noodles.items,
@@ -46,7 +40,6 @@ const MenuAccordion = () => {
             }
         }
 
-        // Apply Veg/Non-Veg filter
         return itemsToFilter.filter(item => {
             if (activeType === 'all') return true;
             if (activeType === 'veg') return item.type === 'veg' || item.type === 'veg_nonveg';
@@ -55,31 +48,20 @@ const MenuAccordion = () => {
         });
     }, [activeCategory, activeType]);
 
-    // Function to determine the price string for display
     const getPriceString = (item) => {
-        if (item.type === 'veg_nonveg' && (item.price_veg || item.price_nonveg)) {
-            const veg_price = item.price_veg || '???';
-            const nonveg_price = item.price_nonveg || '???';
-            
-            if (activeType === 'veg') return veg_price;
-            if (activeType === 'nonveg') return nonveg_price;
-            return `${veg_price} / ${nonveg_price}`;
-        }
-        return item.price || 'Price on request';
+        // Hiding the price for now, returning an empty string
+        return '';
     };
     
-    // Uses the simplified name for the main header display
     const currentCategoryName = activeCategory === 'all' 
         ? "All Main Dishes" 
         : FULL_MENU_DATA[activeCategory]?.name;
         
-    // Determine if custom choices/combos should be shown 
     const showExtras = ['all', 'noodles', 'ramen', 'broths'].includes(activeCategory);
 
     return (
         <section className="py-12 bg-[#F0F5FD]">
             <div className="container mx-auto px-4 max-w-2xl">
-                {/* Header */}
                 <div className="text-center mb-8">
                     <h2 className="text-3xl font-extrabold inline-block font-museo text-dark-blue relative">
                         Our <span className="text-gold">Menu</span>
@@ -89,7 +71,6 @@ const MenuAccordion = () => {
                     </div>
                 </div>
 
-                {/* Filters Component */}
                 <MenuFilters 
                     activeCategory={activeCategory} 
                     setActiveCategory={setActiveCategory}
@@ -101,7 +82,6 @@ const MenuAccordion = () => {
                     {currentCategoryName}
                 </h3>
 
-                {/* --- Accordion List --- */}
                 <div className="space-y-3">
                     {filteredMenu.length > 0 ? (
                         filteredMenu.map((item) => (
@@ -120,24 +100,23 @@ const MenuAccordion = () => {
                     )}
                 </div>
 
-                {/* --- Static List: Combos --- */}
                 {showExtras && (
                     <motion.div layout className="mt-8">
                         <h3 className="text-2xl mb-4 font-bold font-museo text-light-blue text-center">
                             Combos
                         </h3>
+                        {/* Hiding prices for combos */}
                         <div className="p-5 bg-yellow-100 border border-gold rounded-xl shadow-md">
                             <h4 className="text-xl font-extrabold text-light-blue mb-1">{COMBO_ITEM.name}</h4>
                             <p className="text-sm text-dark-blue mb-3">{COMBO_ITEM.description}</p>
                             <div className="flex justify-between text-lg font-bold text-dark-blue">
-                                <span>Veg: ₹{COMBO_ITEM.price_veg}</span>
-                                <span>Non-Veg: ₹{COMBO_ITEM.price_nonveg}</span>
+                                <span>Veg</span>
+                                <span>Non-Veg</span>
                             </div>
                         </div>
                     </motion.div>
                 )}
                 
-                {/* --- Static List: Custom Choices (Proteins, Fibres, etc.) --- */}
                 {showExtras && (
                     <motion.div layout className="mt-8 space-y-4">
                         <h3 className="text-2xl mb-4 font-bold font-museo text-light-blue text-center">
