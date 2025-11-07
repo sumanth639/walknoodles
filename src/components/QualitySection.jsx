@@ -15,14 +15,14 @@ const QualitySection = () => {
       bgImage: '/gallery/img-5.jpg',
       title: 'NO MAIDA',
       description:
-        "We do not add refined sugar in any of our dishes & drinks because sweet moments shouldn't come with side effects!",
+        "Our noodles are hearty, healthy, and wholesome! Now, you can binge eat your favourite noodles guilt free",
     },
     {
       id: 3,
       bgImage: '/gallery/img-6.jpg',
       title: 'NO REFINED SUGAR',
       description:
-        "Our noodles are hearty, healthy, and wholesome! Now, you can binge eat your favourite noodles guilt free",
+        "We do not add refined sugar in any of our dishes & drinks because sweet moments shouldn't come with side effects!",
     },
   ];
 
