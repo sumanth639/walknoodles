@@ -72,7 +72,7 @@ const MustTrySection = () => {
                                     <img
                                         src={item.image}
                                         alt={item.name}
-                                        className="w-56 h-64 object-cover rounded-full mb-4"
+                                        className="w-56 h-64 object-cover rounded-full "
                                     />
                                 </motion.div>
 
@@ -86,7 +86,7 @@ const MustTrySection = () => {
                                         transition={{ type: 'spring', stiffness: 250, damping: 20 }}
                                         className="relative -mt-20 left-1/2 -translate-x-1/2 w-full h-40 bg-gold -z-10 flex flex-col justify-end items-center shadow-lg rounded-b-3xl pb-5"
                                     >
-                                        <h3 className="text-light-blue text-center font-semibold text-lg mb-2">
+                                        <h3 className="text-light-blue text-center font-semibold text-lg mt-2">
                                             {item.name}
                                         </h3>
                                     </motion.div>

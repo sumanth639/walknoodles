@@ -12,7 +12,7 @@ const HeroSection = () => {
         <motion.img
           src="/hero1.png"
           alt="Hero"
-          className="relative w-64 h-auto max-h-[420px] object-contain xs:w-48 xxs:w-40 xxs:max-h-80"
+          className="relative w-64 h-auto max-h-[420px] object-contain xs:w-68 xxs:w-55 xxs:max-h-80"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
