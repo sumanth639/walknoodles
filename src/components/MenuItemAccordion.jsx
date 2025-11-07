@@ -12,10 +12,22 @@ const getTypeTag = (item) => {
     else return null;
 
     return <span className={`text-white text-xs font-bold px-2 py-0.5 rounded-full ${colorClass} whitespace-nowrap`}>{text}</span>;
-}
+};
 
 const MenuItemAccordion = ({ item, openItemId, toggleItem, getPriceString }) => {
     const isOpen = openItemId === item.id;
+
+    // ⭐️ Smooth Transition Object
+    const smoothEaseTransition = {
+        duration: 0.5,
+        ease: "easeInOut"
+    };
+
+    // ⭐️ Icon Rotation Variants
+    const iconVariants = {
+        open: { rotate: 180 },
+        closed: { rotate: 0 }
+    };
 
     return (
         <motion.div
@@ -35,22 +47,21 @@ const MenuItemAccordion = ({ item, openItemId, toggleItem, getPriceString }) => 
             >
                 {!isOpen && (
                     <div className="flex justify-between items-center font-bold">
-                        
                         <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-3 space-y-1 sm:space-y-0 max-w-[70%]">
                             <span className="text-lg text-dark-blue whitespace-normal text-left">{item.name}</span>
                             <div className="shrink-0">{getTypeTag(item)}</div> 
                         </div>
-                        
+
+                        {/* ⭐️ Animated Chevron Icon */}
                         <div className="flex items-center space-x-3 shrink-0">
-                            {/* Price element removed from closed state */}
                             <motion.div
-                                animate={{ rotate: 0 }}
-                                transition={{ duration: 0.3, ease: "easeInOut" }}
+                                variants={iconVariants}
+                                animate={isOpen ? "open" : "closed"}
+                                transition={smoothEaseTransition}
                             >
                                 <ChevronDown className="w-5 h-5 text-light-blue" />
                             </motion.div>
                         </div>
-                        
                     </div>
                 )}
             </button>
@@ -58,11 +69,12 @@ const MenuItemAccordion = ({ item, openItemId, toggleItem, getPriceString }) => 
             <AnimatePresence initial={false}>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                        className="overflow-hidden"
+                        key="content"
+                        initial={{ opacity: 0, y: -20, height: 0 }} // opens from top
+                        animate={{ opacity: 1, y: 0, height: "auto" }}
+                        exit={{ opacity: 0, y: -20, height: 0 }}
+                        transition={smoothEaseTransition} // ⭐️ smoother motion
+                        className="overflow-hidden origin-top"
                     >
                         <div className="flex items-stretch h-full">
                             <div className="w-2/5 relative overflow-hidden bg-gray-200 flex items-center justify-center text-gray-500 text-xs">
@@ -78,7 +90,6 @@ const MenuItemAccordion = ({ item, openItemId, toggleItem, getPriceString }) => 
                                     <h4 className="text-xl font-extrabold text-light-blue">
                                         {item.name}
                                     </h4>
-                                    {/* Price element removed from open state */}
                                 </div>
                                 
                                 <p className="text-sm leading-relaxed text-dark-blue m-0 mb-3 border-b pb-2 border-gray-300">

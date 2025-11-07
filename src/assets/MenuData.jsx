@@ -9,7 +9,7 @@ export const FULL_MENU_DATA = {
     items: [
       {
         id: 'n1',
-        name: "Veg Pad Thai Noodles.jpg",
+        name: "Veg Pad Thai Noodles",
         price_veg: "255",
         price_nonveg: "285",
         description: "Thai stir-fry with wide rice noodles, sautéed in a savory soy sauce, paired with vegetables. ",
@@ -34,7 +34,7 @@ export const FULL_MENU_DATA = {
         price_nonveg: "299",
         description: "Vibrant vegetables, tender paneer, and a sweet savory soy-based sauce. ",
         image: "/menu/Veg Japchae Noodles.jpg",
-        type: 'veg_nonveg',
+        type: 'veg',
         ingredients: ["Sweet Potato Noodles", "Paneer", "Vibrant Vegetables"],
       },
       {
@@ -73,7 +73,7 @@ export const FULL_MENU_DATA = {
         price_nonveg: "299",
         description: "Noodles in rich teriyaki sauce with fresh vegetables and a hint of sesame.",
         image: "/menu/Veg Terayaki Noodles.jpg",
-        type: 'veg_nonveg',
+        type: 'veg',
         ingredients: ["Noodles", "Rich Teriyaki Sauce", "Fresh Vegetables", "Sesame"],
       },
       {
@@ -202,43 +202,7 @@ export const FULL_MENU_DATA = {
       },
     ],
   },
-  broths: {
-    name: "Broths", // Simplified for filter/header display
-    icon: <Droplet className="w-5 h-5 mr-2" />,
-    items: [
-      {
-        id: 'b1',
-        name: "Thukpa",
-        price_veg: "219",
-        price_nonveg: "249",
-        description: "Tibetan-inspired warm soup with wholesome veggies. (219/249)",
-        image: "/menu/thukpa.jpg",
-        type: 'veg_nonveg',
-        ingredients: ["Tibetan Broth", "Noodles", "Veggies", "Protein"],
-      },
-      {
-        id: 'b2',
-        name: "Coconut Thai Soup with Rice Noodles",
-        price_veg: "299",
-        price_nonveg: "329",
-        description: "Rice noodles infused with Thai coconut milk, lemongrass, and zesty lime. (299/329)",
-        image: "/menu/coconut-thai-soup.jpg",
-        type: 'veg_nonveg',
-        ingredients: ["Rice Noodles", "Thai Coconut Milk", "Lemongrass", "Lime"],
-      },
-      {
-        id: 'b3',
-        name: "Kimchi Jjigae",
-        price_veg: "249",
-        price_nonveg: "279",
-        description: "Spicy Korean stew with kimchi, tofu, and veggies. (249/279)",
-        image: "/menu/kimchi-jjigae.jpg",
-        type: 'veg_nonveg',
-        ingredients: ["Spicy Broth", "Kimchi", "Tofu", "Veggies"],
-      },
-    ],
-  },
-  small_plates: {
+   small_plates: {
   name: "Small Plates",
   icon: <Zap className="w-5 h-5 mr-2" />,
   items: [
@@ -350,7 +314,42 @@ export const FULL_MENU_DATA = {
     },
   ],
 },
-
+  broths: {
+    name: "Broths", // Simplified for filter/header display
+    icon: <Droplet className="w-5 h-5 mr-2" />,
+    items: [
+      {
+        id: 'b1',
+        name: "Thukpa",
+        price_veg: "219",
+        price_nonveg: "249",
+        description: "Tibetan-inspired warm soup with wholesome veggies. (219/249)",
+        image: "/menu/thukpa.jpg",
+        type: 'veg_nonveg',
+        ingredients: ["Tibetan Broth", "Noodles", "Veggies", "Protein"],
+      },
+      {
+        id: 'b2',
+        name: "Coconut Thai Soup with Rice Noodles",
+        price_veg: "299",
+        price_nonveg: "329",
+        description: "Rice noodles infused with Thai coconut milk, lemongrass, and zesty lime. (299/329)",
+        image: "/menu/coconut-thai-soup.jpg",
+        type: 'veg_nonveg',
+        ingredients: ["Rice Noodles", "Thai Coconut Milk", "Lemongrass", "Lime"],
+      },
+      {
+        id: 'b3',
+        name: "Kimchi Jjigae",
+        price_veg: "249",
+        price_nonveg: "279",
+        description: "Spicy Korean stew with kimchi, tofu, and veggies. (249/279)",
+        image: "/menu/kimchi-jjigae.jpg",
+        type: 'veg_nonveg',
+        ingredients: ["Spicy Broth", "Kimchi", "Tofu", "Veggies"],
+      },
+    ],
+  },
   desserts: {
     name: "Desserts",
     icon: <Cake className="w-5 h-5 mr-2" />,
@@ -394,7 +393,7 @@ export const CATEGORY_MAP = [
   { id: 'all', name: 'All Dishes', icon: <Utensils className="w-5 h-5 mr-2" /> },
   ...Object.keys(FULL_MENU_DATA).map(key => ({
     id: key,
-    name: FULL_MENU_DATA[key].name, // Uses the simplified name (Noodles, Ramen, etc.)
+    name: FULL_MENU_DATA[key].name, 
     icon: FULL_MENU_DATA[key].icon
   }))
 ];
