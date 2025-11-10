@@ -27,7 +27,7 @@ export default function FoodGridLayout() {
         {/* Image 2 - Top middle (tall, spans 2 rows) */}
         <div className="col-start-2 row-start-1 row-span-2 overflow-hidden rounded-lg">
           <img 
-            src={images[1]} 
+            src={images[3]} 
             alt="Image 2" 
             className="w-full h-full object-cover"
           />
@@ -45,7 +45,7 @@ export default function FoodGridLayout() {
         {/* Image 4 - Middle left (tall, spans 2 rows) */}
         <div className="col-start-1 row-start-2 row-span-2 overflow-hidden rounded-lg">
           <img 
-            src={images[3]} 
+            src={images[1]} 
             alt="Image 4" 
             className="w-full h-full object-cover"
           />

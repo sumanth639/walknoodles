@@ -35,17 +35,18 @@ const MustTrySection = () => {
     <section className="overflow-hidden bg-[#fbeeda]">
       {/* Section Title */}
       <motion.h2
-        className="text-3xl font-bold text-center text-light-blue pt-4"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        Must Try..
-      </motion.h2>
+              className="text-3xl mt-3 font-extrabold text-dark-blue text-center mb-10 md:mb-12 lg:text-5xl lg:mb-12 xl:text-6xl"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8 }}
+            >
+              Must Try<span className='text-light-blue'>...</span>
+            </motion.h2>
 
       {/* Subtitle below title */}
       <motion.p
-        className="hidden sm:block text-center text-dark-blue/80 text-base mt-2 mb-6 max-w-2xl mx-auto px-4 leading-relaxed"
+        className="hidden sm:block text-center text-dark-blue/80 text-xl mt-2 mb-6 max-w-2xl mx-auto px-4 leading-relaxed"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}

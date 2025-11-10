@@ -17,7 +17,7 @@ const ContactHero = () => {
         {/* Right Column - Content */}
         <div className="w-1/2 text-left text-dark-blue">
           <h2 className="text-5xl font-bold leading-16">
-            Contact <br />
+            Contact <br className='lg:hidden'/>
             <span className="text-light-blue">Us</span>
           </h2>
         </div> 

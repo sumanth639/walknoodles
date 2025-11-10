@@ -16,14 +16,14 @@ const MenuFilters = ({ activeCategory, setActiveCategory, activeType, setActiveT
                             setActiveCategory(category.id);
                             setActiveType('all');
                         }}
-                        className={`flex items-center text-sm font-bold px-4 py-2 rounded-full transition-all duration-300 ${
+                        className={`flex items-center text-sm cursor-pointer font-bold px-4 py-2 rounded-full transition-all duration-300 ${
                             activeCategory === category.id
                                 ? 'bg-light-blue text-white shadow-lg'
                                 : 'bg-gray-200 text-dark-blue hover:bg-gray-300'
                         }`}
                     >
                         {category.icon}
-                        {category.name} {/* Directly use the simplified name */}
+                        {category.name}
                     </motion.button>
                 ))}
             </div>
@@ -34,13 +34,13 @@ const MenuFilters = ({ activeCategory, setActiveCategory, activeType, setActiveT
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="flex justify-center gap-4 mb-8"
+                    className="flex justify-center gap-4 mb-8 "
                 >
                     {['all', 'veg', 'nonveg'].map(type => (
                         <button
                             key={type}
                             onClick={() => setActiveType(type)}
-                            className={`text-sm font-semibold px-4 py-1 rounded-lg transition-colors ${
+                            className={`text-sm font-semibold px-4 py-1 rounded-lg transition-colors cursor-pointer ${
                                 activeType === type
                                     ? 'bg-gold text-white shadow-md'
                                     : 'bg-white text-dark-blue border border-gray-300 hover:bg-gray-100'

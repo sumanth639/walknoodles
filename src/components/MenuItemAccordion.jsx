@@ -5,10 +5,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 const getTypeTag = (item) => {
     let colorClass;
     let text;
-    
-    if(item.type === 'veg') { colorClass = 'bg-green-600'; text = 'VEG'; }
-    else if(item.type === 'nonveg') { colorClass = 'bg-red-600'; text = 'NON-VEG'; }
-    else if(item.type === 'veg_nonveg') { colorClass = 'bg-orange-600'; text = 'V/NV'; }
+
+    if (item.type === 'veg') { colorClass = 'bg-green-600'; text = 'VEG'; }
+    else if (item.type === 'nonveg') { colorClass = 'bg-red-600'; text = 'NON-VEG'; }
+    else if (item.type === 'veg_nonveg') { colorClass = 'bg-orange-600'; text = 'V/NV'; }
     else return null;
 
     return <span className={`text-white text-xs font-bold px-2 py-0.5 rounded-full ${colorClass} whitespace-nowrap`}>{text}</span>;
@@ -33,23 +33,21 @@ const MenuItemAccordion = ({ item, openItemId, toggleItem, getPriceString }) => 
         <motion.div
             key={item.id}
             layout
-            className={`rounded-2xl transition-all duration-300 shadow-md font-museo relative ${
-                isOpen
-                    ? "bg-cream-bg border border-gold shadow-xl"
+            className={`rounded-2xl transition-all duration-300 shadow-md font-museo relative  ${isOpen
+                    ? "bg-gold border border-gold shadow-xl"
                     : "bg-[#FFF3DB] border border-white hover:shadow-lg"
-            }`}
+                }`}
         >
             <button
-                className={`w-full text-left transition-colors ${
-                    isOpen ? "p-0" : "p-4"
-                }`}
+                className={`w-full text-left cursor-pointer transition-colors ${isOpen ? "p-0" : "p-4"
+                    }`}
                 onClick={() => toggleItem(item.id)}
             >
                 {!isOpen && (
                     <div className="flex justify-between items-center font-bold">
                         <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-3 space-y-1 sm:space-y-0 max-w-[70%]">
                             <span className="text-lg text-dark-blue whitespace-normal text-left">{item.name}</span>
-                            <div className="shrink-0">{getTypeTag(item)}</div> 
+                            <div className="shrink-0">{getTypeTag(item)}</div>
                         </div>
 
                         {/* ⭐️ Animated Chevron Icon */}
@@ -73,7 +71,7 @@ const MenuItemAccordion = ({ item, openItemId, toggleItem, getPriceString }) => 
                         initial={{ opacity: 0, y: -20, height: 0 }} // opens from top
                         animate={{ opacity: 1, y: 0, height: "auto" }}
                         exit={{ opacity: 0, y: -20, height: 0 }}
-                        transition={smoothEaseTransition} // ⭐️ smoother motion
+                        transition={smoothEaseTransition} 
                         className="overflow-hidden origin-top"
                     >
                         <div className="flex items-stretch h-full">
@@ -91,11 +89,11 @@ const MenuItemAccordion = ({ item, openItemId, toggleItem, getPriceString }) => 
                                         {item.name}
                                     </h4>
                                 </div>
-                                
+
                                 <p className="text-sm leading-relaxed text-dark-blue m-0 mb-3 border-b pb-2 border-gray-300">
                                     {item.description}
                                 </p>
-                                
+
                                 {item.ingredients && (
                                     <div className="mt-2">
                                         <h5 className="text-sm font-bold text-dark-blue">Key Ingredients:</h5>
