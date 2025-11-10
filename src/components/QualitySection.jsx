@@ -37,14 +37,29 @@ const QualitySection = () => {
   };
 
   return (
-    <section className="bg-cream-bg py-12 md:py-16 overflow-hidden">
-      <div className="space-y-6">
+    <section className="bg-cream-bg py-12 md:py-16 overflow-hidden lg:py-24">
+      {/* SECTION HEADER (Desktop Enhancement) */}
+      <motion.h2
+        className="text-3xl font-extrabold text-dark-blue text-center mb-10 md:mb-12 lg:text-5xl lg:mb-16 xl:text-6xl"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8 }}
+      >
+        Our Commitment to <span className="text-light-blue">Quality</span>
+      </motion.h2>
+      {/* --- */}
+
+      {/* Content Container (Desktop Centering) */}
+      <div className="space-y-6 lg:space-y-12 max-w-7xl mx-auto px-0 lg:px-6">
         {qualities.map((quality, index) => (
           <motion.div
             key={quality.id}
+            // ADJUSTED: Added desktop rounding and size constraint
             className={`relative flex flex-col justify-center min-h-[280px]
                         w-screen overflow-hidden shadow-lg group
-                        bg-no-repeat bg-cover bg-center rounded-none`}
+                        bg-no-repeat bg-cover bg-center rounded-none
+                        lg:w-full lg:min-h-[380px] lg:rounded-3xl xl:min-h-[420px]`}
             style={{
               backgroundImage: `url(${quality.bgImage})`,
               backgroundSize: 'cover',
@@ -66,16 +81,19 @@ const QualitySection = () => {
                           p-6 sm:p-8 md:p-10 
                           rounded-2xl bg-light-blue text-white opacity-90 shadow-xl
                           ${index % 2 === 0
-                            ? 'right-4 sm:right-6 md:right-8'
-                            : 'left-4 sm:left-6 md:left-8'}
-                          transition-all duration-300`}
+                            ? 'right-4 sm:right-6 md:right-8 lg:right-12 xl:right-20'
+                            : 'left-4 sm:left-6 md:left-8 lg:left-12 xl:left-20'} // Odd index: Left side
+                          transition-all duration-300
+                          
+                          /* ADDED: Desktop sizing and text styles */
+                          lg:w-[45%] lg:h-auto lg:py-12 lg:px-16 xl:w-[40%] xl:py-16 xl:px-20 lg:rounded-3xl`}
               variants={contentVariant}
               transition={{ duration: 0.8, delay: index * 0.4 }}
             >
-              <h3 className="text-2xl font-bold text-gold mb-3 sm:mb-4">
+              <h3 className="text-2xl font-bold text-gold mb-3 sm:mb-4 lg:text-4xl xl:text-5xl">
                 {quality.title}
               </h3>
-              <p className="text-[14px] leading-relaxed">
+              <p className="text-[14px] leading-relaxed lg:text-lg xl:text-xl xl:leading-normal">
                 {quality.description}
               </p>
             </motion.div>

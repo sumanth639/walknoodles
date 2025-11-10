@@ -7,9 +7,9 @@ function Home() {
   return (
     <>
     <HeroSection/>
-    <MustTrySection/>
+     <MustTrySection/>
     <QualitySection/>
-    <ReviewsSection/>
+    <ReviewsSection/> 
     </>
   )
 }

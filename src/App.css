@@ -19,6 +19,11 @@
   --breakpoint-2xl: 1536px; /* Default 2XL */
 }
 
+body, html {
+  overflow-x: hidden;
+}
+
+
 body {
   padding: 0;
   margin: 0;
