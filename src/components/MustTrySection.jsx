@@ -86,12 +86,13 @@ const MustTrySection = () => {
                 <div className="relative flex items-center justify-center z-10 h-64 cursor-pointer overflow-visible">
                   <motion.img
                     src={item.image}
-                    alt={item.name}
+                    alt={`${item.name} - A must-try dish at Walk Noodles`}
                     className="w-56 h-64 object-cover rounded-full"
                     whileHover={{
                       scale: 1.05,
                     }}
                     transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+                    loading="lazy"
                   />
                 </div>
 

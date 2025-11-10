@@ -40,8 +40,11 @@ const MenuItemAccordion = ({ item, openItemId, toggleItem, getPriceString }) => 
         >
             <button
                 className={`w-full text-left cursor-pointer transition-colors ${isOpen ? "p-0" : "p-4"
-                    }`}
+                    } focus:outline-none focus:ring-2 focus:ring-gold rounded-lg`}
                 onClick={() => toggleItem(item.id)}
+                aria-expanded={isOpen}
+                aria-controls={`menu-item-${item.id}`}
+                aria-label={`${isOpen ? 'Close' : 'Open'} ${item.name} details`}
             >
                 {!isOpen && (
                     <div className="flex justify-between items-center font-bold">
@@ -68,18 +71,22 @@ const MenuItemAccordion = ({ item, openItemId, toggleItem, getPriceString }) => 
                 {isOpen && (
                     <motion.div
                         key="content"
+                        id={`menu-item-${item.id}`}
                         initial={{ opacity: 0, y: -20, height: 0 }} // opens from top
                         animate={{ opacity: 1, y: 0, height: "auto" }}
                         exit={{ opacity: 0, y: -20, height: 0 }}
                         transition={smoothEaseTransition} 
                         className="overflow-hidden origin-top"
+                        role="region"
+                        aria-labelledby={`menu-item-button-${item.id}`}
                     >
                         <div className="flex items-stretch h-full">
                             <div className="w-2/5 relative overflow-hidden bg-gray-200 flex items-center justify-center text-gray-500 text-xs">
                                 <img
                                     src={item.image}
-                                    alt={item.name}
+                                    alt={`${item.name} - ${item.description}`}
                                     className="w-full h-full object-cover block"
+                                    loading="lazy"
                                 />
                             </div>
 

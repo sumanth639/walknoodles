@@ -63,9 +63,12 @@ const MenuAccordion = () => {
         <section className="py-12 bg-[#F0F5FD]">
             <div className="container mx-auto px-4 max-w-2xl">
                 <div className="text-center mb-8">
-                    <h2 className="text-3xl font-extrabold inline-block font-museo text-dark-blue relative">
-                        Our <span className="text-gold">Menu</span>
-                    </h2>
+                    <h1 className="text-3xl font-extrabold inline-block font-museo text-dark-blue relative">
+                        Our <span className="text-gold">Asian Noodles Menu</span>
+                    </h1>
+                    <p className="text-dark-blue text-sm mt-2 max-w-2xl mx-auto">
+                        Discover authentic Asian noodles, ramen, and small plates in Indirapuram. Healthy, delicious, and made with love!
+                    </p>
                     <div className="flex justify-center mt-2">
                         <div className="w-11/12 h-0.5 bg-dark-blue rounded-full"></div>
                     </div>

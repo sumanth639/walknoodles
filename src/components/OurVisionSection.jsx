@@ -21,8 +21,9 @@ const OurVisionSection = () => {
               <div className="h-4/5 w-1/4 overflow-hidden shadow-md">
                 <img
                   src="/gallery/img-6.jpg"
-                  alt="Red Dumplings"
+                  alt="Red Dumplings - Asian dim sum from Walk Noodles"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
 
@@ -30,8 +31,9 @@ const OurVisionSection = () => {
               <div className="h-full w-2/5 overflow-hidden shadow-md">
                 <img
                   src="/gallery/img-2.jpg"
-                  alt="Noodles Bowl"
+                  alt="Noodles Bowl - Healthy Asian noodles from Walk Noodles"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
 
@@ -39,8 +41,9 @@ const OurVisionSection = () => {
               <div className="h-4/5 w-1/4 overflow-hidden shadow-md">
                 <img
                   src="/gallery/img-1.jpg"
-                  alt="Fried Noodles"
+                  alt="Fried Noodles - Authentic Asian cuisine from Walk Noodles"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>

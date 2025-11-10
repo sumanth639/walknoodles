@@ -12,11 +12,12 @@ const HeroSection = () => {
         {/* Hero1 Image */}
         <motion.img
           src="/hero1.png"
-          alt="Hero"
+          alt="Walk Noodles - Healthy and tasty Asian noodles"
           className="relative w-64 h-auto max-h-[420px] object-contain xs:w-68 xxs:w-55 xxs:max-h-80"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
+          loading="eager"
         />
       </div>
 
@@ -53,34 +54,64 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
           >
             <p className="text-dark-blue text-lg leading-relaxed font-medium mb-4 lg:text-lg">
-              Indulge in authentic flavors made with love and the finest ingredients.
+              Indulge in authentic Asian flavors made with love and the finest ingredients.
               From hand-tossed noodles to fresh veggies — we bring the best of
-              Asian cuisine to your plate. Discover wholesome meals crafted for both
-              taste and health.
+              Asian cuisine to your plate in Indirapuram. Discover wholesome meals crafted for both
+              taste and health. Your go-to healthy noodles restaurant!
             </p>
           </motion.div>
 
           {/* Enquire Button */}
-          <motion.button
-            className="absolute top-60 left-6 md:left-10 px-4 py-2 bg-light-blue text-gold text-xl font-semibold rounded-full hover:bg-dark-blue transition border border-black duration-300 transform hover:scale-105 lg:relative lg:top-0 lg:left-0 lg:mt-6 lg:px-8 lg:py-2.5 lg:text-xl"
+          <motion.div
+            className="absolute top-60 left-6 md:left-10 lg:relative lg:top-0 lg:left-0 lg:mt-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
           >
-            Enquire Now
-          </motion.button>
+            <Link
+              to="/contact"
+              className="inline-block px-4 py-2 bg-light-blue text-gold text-xl font-semibold rounded-full hover:bg-dark-blue transition border border-black duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold lg:px-8 lg:py-2.5 lg:text-xl"
+            >
+              Enquire Now
+            </Link>
+          </motion.div>
 
           {/* Social Icons */}
-          <motion.div
+          <motion.nav
             className="absolute left-6 md:left-10 bottom-10 flex flex-col space-y-6 lg:relative lg:left-0 lg:bottom-0 lg:mt-8 lg:flex-row lg:space-y-0 lg:space-x-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.9, ease: "easeOut" }}
+            aria-label="Social media links"
           >
-            <Facebook className="w-8 h-8 text-dark-blue hover:text-light-blue cursor-pointer transition duration-200 lg:w-8 lg:h-8" />
-            <MessageCircle className="w-8 h-8 text-dark-blue hover:text-light-blue cursor-pointer transition duration-200 lg:w-8 lg:h-8" />
-            <Instagram className="w-8 h-8 text-dark-blue hover:text-light-blue cursor-pointer transition duration-200 lg:w-8 lg:h-8" />
-          </motion.div>
+            <a 
+              href="https://www.facebook.com/walknoodles" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-8 h-8 text-dark-blue hover:text-light-blue cursor-pointer transition duration-200 focus:outline-none focus:ring-2 focus:ring-gold rounded lg:w-8 lg:h-8"
+              aria-label="Follow Walk Noodles on Facebook"
+            >
+              <Facebook className="w-8 h-8" aria-hidden="true" />
+            </a>
+            <a 
+              href="https://wa.me/91XXXXXXXXXX" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-8 h-8 text-dark-blue hover:text-light-blue cursor-pointer transition duration-200 focus:outline-none focus:ring-2 focus:ring-gold rounded lg:w-8 lg:h-8"
+              aria-label="Message Walk Noodles on WhatsApp"
+            >
+              <MessageCircle className="w-8 h-8" aria-hidden="true" />
+            </a>
+            <a 
+              href="https://www.instagram.com/walknoodles/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-8 h-8 text-dark-blue hover:text-light-blue cursor-pointer transition duration-200 focus:outline-none focus:ring-2 focus:ring-gold rounded lg:w-8 lg:h-8"
+              aria-label="Follow Walk Noodles on Instagram"
+            >
+              <Instagram className="w-8 h-8" aria-hidden="true" />
+            </a>
+          </motion.nav>
         </div>
 
         {/* Right Image Column */}
@@ -88,7 +119,7 @@ const HeroSection = () => {
         <div className="lg:w-1/2 lg:relative lg:flex lg:items-center lg:justify-center">
           <motion.img
             src="/hero2.png"
-            alt="Hero 2"
+            alt="Delicious Asian noodles and ramen dishes from Walk Noodles"
             className="
               absolute top-60 right-0 w-[420px] h-auto max-h-[720px] object-contain
               xs:w-96 xxs:w-84 xxs:max-h-[460px]
@@ -103,6 +134,7 @@ const HeroSection = () => {
               repeatType: "loop",
               ease: "easeInOut",
             }}
+            loading="eager"
           />
         </div>
       </div>

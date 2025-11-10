@@ -38,10 +38,11 @@ const OurMissionSection = () => {
             <div className="w-[30%] flex justify-center relative overflow-visible lg:w-[40%] xl:w-[45%]">
               <img
                 src="/about.png"
-                alt="About Walkin'Oodle"
+                alt="Walk Noodles - About our mission and vision"
                 className="w-[120%] max-w-none relative scale-150 -right-4 top-10 rotate-[8deg]
                            lg:scale-[1.2] lg:rotate-[4deg] lg:-right-8 lg:top-12 
                            xl:scale-[1.1] xl:-right-12"
+                loading="lazy"
               />
             </div>
           </div>
